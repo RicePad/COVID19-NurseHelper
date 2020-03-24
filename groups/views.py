@@ -12,10 +12,12 @@ class CreateGroupView(CreateView):
     fields = ("name", "description")
     model = Group
     context_object_name = "create_group"
+    template_name = "group_form.html"
 
 class SingleGroup(DetailView):
     model = Group
-    context_object_name = "single_group_detail"
+    context_object_name = "group_detail"
+    template_name = "group_detail.html"
 
 class ListGroups(ListView):
     model = Group
