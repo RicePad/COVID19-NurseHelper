@@ -43,7 +43,8 @@ INSTALLED_APPS = [
 
     #apps
     'classroom',
-    'groups'
+    'groups',
+    'posts'
 ]
 
 MIDDLEWARE = [

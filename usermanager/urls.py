@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/signup/nurse/', NurseSignUpView.as_view(), name='nurse_signup'),
     path('accounts/signup/helper/', HelperSignUpView.as_view(), name='helper_signup'),
-    path('groups', include('groups.urls', namespace="groups")),
+    path('groups/', include('groups.urls', namespace="groups")),
+    path('posts/', include('posts.urls', namespace="posts")),
 ]
