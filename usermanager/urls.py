@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from classroom.views import NurseSignUpView, HelperSignUpView
+from .views import HomeView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', HomeView.as_view(), name="home"),
     path('accounts/signup/nurse/', NurseSignUpView.as_view(), name='nurse_signup'),
     path('accounts/signup/helper/', HelperSignUpView.as_view(), name='helper_signup'),
     path('groups/', include('groups.urls', namespace="groups")),

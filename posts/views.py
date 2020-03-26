@@ -4,7 +4,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse, reverse_lazy
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import TemplateView, ListView, DetailView, View, CreateView, RedirectView
+from django.views.generic import (TemplateView, ListView, DetailView, 
+                                 View, CreateView, RedirectView, DeleteView)
+from django.contrib import messages                       
 from django.http import Http404
 from braces.views import SelectRelatedMixin
 
@@ -62,6 +64,23 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         self.object.user = self.request.user
         self.object.save()
         return super().form_valid(form)
+
+class DeletePostView(LoginRequiredMixin, SelectRelatedMixin, DeleteView):
+    model = Post
+    select_related = ("user", "group")
+    success_url = reverse_lazy("posts:all")
+    template_name = "post_confirm_delete.html"
+    
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter(user_id=self.request.user.id)
+
+    def delete(self, *args, **kwargs):
+        messages.success(self.request, "Post Deleted")
+        return super().delete(*args, **kwargs)
+
+    
+    
 
 
 
