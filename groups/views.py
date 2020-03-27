@@ -5,6 +5,7 @@ from .models import Group, GroupMember
 from . import models
 from django.contrib import messages
 from django.db import IntegrityError
+from django.contrib.auth.mixins import(LoginRequiredMixin,PermissionRequiredMixin)
 
 
 # Create your views here.
@@ -25,23 +26,22 @@ class ListGroups(ListView):
     template_name = "group_list.html"
 
 
-class JoinGroup(RedirectView):
+class JoinGroup(LoginRequiredMixin, RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         return reverse("groups:single",kwargs={"slug": self.kwargs.get("slug")})
-
+        
     def get(self, request, *args, **kwargs):
-        group = get_object_or_404(Group,slug=self.kwargs.get("slug"))
+         group = get_object_or_404(Group, slug=self.kwargs.get("slug"))
+         
+         try:
+             GroupMember.objects.create(user=self.request.user,group=group)
+         except IntegrityError:
+             messages.warning(self.request,("Warning, already a member of {}".format(group.name)))
 
-        try:
-            GroupMember.objects.create(user=self.request.user,group=group)
-
-        except IntegrityError:
-            messages.warning(self.request,("Warning, already a member of {}".format(group.name)))
-
-        else:
-            messages.success(self.request,"You are now a member of the {} group.".format(group.name))
-
-        return super().get(request, *args, **kwargs)
+         else:
+             messages.success(self.request,"You are now a member of the {} group.".format(group.name))
+    
+         return super().get(request, *args, **kwargs)
 
 class LeaveGroup(RedirectView):
     
