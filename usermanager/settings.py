@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+     #Pip installs
+    'compressor',
+
 
     #apps
     'classroom',
@@ -126,6 +129,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_collected')
+
+STATICFILES_DIRS = (
+
+)
+COMPRESS_ROOT = STATIC_ROOT
+
+
+# Static files (CSS, JavaScript, Images)
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+    ('text/x-sass', 'django_libsass.SassCompiler'),
+)
 
 
 AUTH_USER_MODEL='classroom.User'

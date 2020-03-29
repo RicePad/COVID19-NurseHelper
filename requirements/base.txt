@@ -1,1 +1,3 @@
 django-braces
+django_compressor==2.2
+django-libsass==0.7

@@ -1,5 +1,7 @@
 <DOCTYPE html>
-{% load staticfiles %}
+{% load compress %}
+{% load static %}
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -18,6 +20,20 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <link rel="stylesheet" href="{% static 'simplesocial/css/master.css'%}">
+    <link type="text/x-scss" href="{% static 'css/bootstrap/bootstrap.css' %}" rel="stylesheet" media="screen">
+
+  {% compress css %}
+      <link type="text/x-scss" href="{% static 'sass/style.scss' %}" rel="stylesheet" media="screen">
+  {% endcompress %}
+
+  {% compress css %}
+        <link type="text/x-scss" href="{% static 'css/bootstrap/bootstrap.scss' %}" rel="stylesheet" media="screen">
+  {% endcompress %}
+  
+  <!-- FONTAWESOME  -->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+  
+  
   </head>
   <body>
     <nav class="navbar  mynav" role="navigation" id="navbar">
