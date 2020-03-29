@@ -5,4 +5,4 @@ __pycache__/
 local_settings.py
 db.sqlite3
 /static_collected
-./usermanager/static
+/usermanager/static
