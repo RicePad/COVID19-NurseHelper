@@ -1,4 +1,4 @@
-<div class="post media">
+{% comment %} <div class="post media">
   <h3>{{ post.message }}</h3>
 
   <div class="media-body">
@@ -22,4 +22,202 @@
 			{% endif %}
 		</div>
   </div>
-</div>
+</div> {% endcomment %}
+
+ {% comment %} <section class="support_details_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="dwqa-container">
+                    <div class="dwqa-single-question">
+                        <div class="dwqa-breadcrumbs">
+                            <a href="">Support Forum</a>
+                            <span class="dwqa-sep"> › </span>
+                            <a href="">Category: Item Discussion</a>
+                            <span class="dwqa-sep"> › </span>
+                            <span class="dwqa-current">Responsive Website Footer Menu</span>
+                        </div>
+                        <!-- Ends: .dwqa-breadcrumbs -->
+                        
+                        <!-- Start: .dwqa-question-item -->
+                            
+                            <div class="dwqa-question-item">
+                                <div class="dwqa-question-vote" data-nonce="d7368a240e" data-post="6395">
+                                    <span class="dwqa-vote-count">0</span>
+                                    <a class="dwqa-vote dwqa-vote-up" href="#">Vote Up</a>
+                                    <a class="dwqa-vote dwqa-vote-down" href="#">Vote Down</a>
+                                </div>
+                                <div class="dwqa-question-meta">
+                                        <span>
+                                            <a href="">
+                                                <img alt="" src="static/images/dw-avatar.png" class="avatar avatar-48 photo"
+                                                    height="48" width="48">{{post.user.username}}</a> asked on {{ post.created_at }}</span>
+                                    <span class="dwqa-question-actions"></span>
+                                </div>
+                                <div class="dwqa-question-content">
+                                    <p>{{ post.message }}</p>
+                                </div>
+                            </div>
+
+                        <!-- Ends: .dwqa-question-item -->
+                        <div class="dwqa-answers">
+                            <div class="dwqa-answers-title"><h5>4 Answers</h5></div>
+                            <div class="dwqa-answers-list">
+                                <div class="dwqa-answer-item">
+                                    <div class="dwqa-answer-vote" data-nonce="5d2ccf7ff2" data-post="6399">
+                                        <span class="dwqa-vote-count">0</span>
+                                        <a class="dwqa-vote dwqa-vote-up" href="#">Vote Up</a>
+                                        <a class="dwqa-vote dwqa-vote-down" href="#">Vote Down</a>
+                                    </div>
+                                    <div class="dwqa-answer-meta">
+                                            <span>
+                                                <a href="">
+                                                    <img alt="" src="images/dw-avatar2.png"
+                                                         class="avatar avatar-48 photo" height="48" width="48">AazzTech</a>
+                                                <span class="dwqa-label dwqa-staff">Staff</span> answered 2 years ago</span>
+                                    </div>
+                                    <div class="dwqa-answer-content">
+                                        <p>Hi Josh,
+                                            <br> Can you give your website link so that we can check and give you the
+                                            code
+                                            necessary to change the font?&nbsp;</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <!-- dwqa-answers-list -->
+                        </div>
+                        <!-- Ends: .dwqa-answers -->
+                    </div>
+                    <!-- Ends: .dwqa-single-question -->
+                </div>
+                <!-- Ends: .dwqa-container -->
+            </div>
+            <!-- Ends: .col-lg-9 -->
+
+            <div class="col-lg-3">
+                <aside class="sidebar support--sidebar">
+                    <a href="login.html" class="login_promot">Login to Ask a Question</a>
+
+                    <div class="sidebar-card card--forum_categories">
+                        <div class="card-title">
+                            <h4>Categories</h4>
+                        </div>
+                        <div class="collapsible-content">
+                            <ul class="card-content">
+                                <li>
+                                    <a href="#">
+                                        Wordpress
+                                        <span class="item-count">35</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Support Center
+                                        <span class="item-count"> 45</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        General Topics
+                                        <span class="item-count">13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Pre-Sales
+                                        <span class="item-count">08</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Purchases
+                                        <span class="item-count">34</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Billing
+                                        <span class="item-count">78</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Testimonials
+                                        <span class="item-count">26</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- end /.collapsible_content -->
+                    </div>
+                    <!-- end .card--forum_categories -->
+
+                    <div class="sidebar-card card--top_discussion">
+                        <div class="card-title">
+                            <h4>Popular Questions</h4>
+                        </div>
+                        <div class="collapsible-content">
+                            <ul class="card-content">
+                                <li>
+                                    <a href="#">How to pin a sticky ques tion to the top of the ques tions page?
+                                        <span>2 Weeks Ago</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">How can I delete more than one post at a time?
+                                        <span>2 Weeks Ago</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">What are the guidelines for ratings and reviews?
+                                        <span>2 Weeks Ago</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">How can I delete more than one post at a time?
+                                        <span>2 Weeks Ago</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- end /.collapsible_content -->
+                    </div>
+                    <!-- end .card--forum_categories -->
+                </aside>
+                <!-- end .sidebar -->
+            </div>
+            <!-- end .col-lg-3 -->
+        </div>
+        <!-- end .row -->
+    </div>
+    <!-- end .container -->
+</section>
+<!--================================
+        END FORUM DETAILS AREA
+=================================-->
+<section class="support_details_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="dwqa-container">
+                    <div class="dwqa-single-question">
+                        <div class="dwqa-breadcrumbs">
+                            <a href="">Support Forum</a>
+                            <span class="dwqa-sep"> › </span>
+                            <a href="">Category: Item Discussion</a>
+                            <span class="dwqa-sep"> › </span>
+                            <span class="dwqa-current">Responsive Website Footer Menu</span>
+                        </div>
+                        <!-- Ends: .dwqa-breadcrumbs -->              
+                    </div>
+                    <!-- Ends: .dwqa-single-question -->
+                </div>
+                <!-- Ends: .dwqa-container -->
+            </div>
+            <!-- Ends: .col-lg-9 -->          
+        </div>
+        <!-- end .row -->
+    </div>
+    <!-- end .container -->
+</section>
