@@ -42,12 +42,15 @@ INSTALLED_APPS = [
 
      #Pip installs
     'compressor',
+    'graphene_django',
+
 
 
     #apps
     'classroom',
     'groups',
     'posts'
+
 ]
 
 MIDDLEWARE = [
@@ -150,3 +153,8 @@ COMPRESS_PRECOMPILERS = (
 
 
 AUTH_USER_MODEL='classroom.User'
+
+
+GRAPHENE = {
+    'SCHEMA': 'usermanager.schema.schema',
+}
