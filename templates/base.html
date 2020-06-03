@@ -6,10 +6,10 @@
   <head>
     <meta charset="utf-8">
     <title>Star Social</title>
-    {% compress css %}
+    {% comment %} {% compress css %}
       <link type="text/x-scss" href="{% static 'sass/style.scss' %}" rel="stylesheet" media="screen">
       <link type="text/x-scss" href="{% static 'css/bootstrap/bootstrap.scss' %}" rel="stylesheet" media="screen">
-    {% endcompress %}
+    {% endcompress %} {% endcomment %}
   
   <!-- FONTAWESOME  -->
     <link rel="stylesheet" href="{% static 'css/all.css' %}">

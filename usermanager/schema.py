@@ -1,10 +1,11 @@
 import graphene
+import posts.queries
 
-import posts.schema
 
-
-class Query(posts.schema.QueryType, graphene.ObjectType):
+class Query(posts.queries.QueryType, graphene.ObjectType):
     pass
+
+
 
 
 schema = graphene.Schema(query=Query)

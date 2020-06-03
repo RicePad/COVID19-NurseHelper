@@ -8,12 +8,4 @@ class PostType(DjangoObjectType):
     class Meta:
         model = Post
 
-
-class QueryType(graphene.ObjectType):
-    posts = graphene.List(PostType)
-
-    def resolve_posts(self, info, **kwargs):
-        return Post.objects.all()
-
-
         
